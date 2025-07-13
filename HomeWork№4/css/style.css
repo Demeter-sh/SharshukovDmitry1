@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content_backGround {
+    background-image: url('../image/back.jpg'); 
+    background-attachment: scroll
+}
+
+h1 {
+   text-align: center; 
+   color: #1b4f72; 
+}
+
+.info_block {
+    margin: 3em 10em 0; 
+    padding-top: 20px; 
+    min-width: 100px; 
+    background-color:  rgba(255, 255, 255, 0.7);
+}
+
+.image_container {
+    float: left; 
+    margin: 10px auto; 
+    padding: 23px 23px; 
+    max-width: 400px; 
+    border: solid 2px  #1b4f72; 
+}
+
+img {
+    max-width: 300px;
+}
+
+.paragraph {
+    margin-top: 8px;
+    font: normal 400 16px/100% Ubuntu Condensed; 
+}
+
+.clear_both {
+    clear: both;
+}
+
+h2 {
+    margin-top: 80px;
+    color: #1b4f72;
+}
+
+table {
+    border: solid 1px #1b4f72;
+    border-collapse: collapse;
+}
+
+th {
+    border: solid 1px #1b4f72;
+    background-color: #d6eaf8;
+}
+
+td {
+    border: solid 1px #1b4f72;
+    background-color: aliceblue;
+}
+
+tfoot {
+    font-weight: bold; 
+    text-align: center;
+}
+
+a {
+    color: #1b4f72;
+}
