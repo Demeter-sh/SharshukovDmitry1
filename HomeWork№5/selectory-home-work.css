@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&family=Lato:ital,wght@0,300;0,400;1,400&display=swap');
+
+h1 {
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-family: Bitter;
+    font-size: 32px;
+    text-align: center;
+}
+
+h2 {
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-family: Bitter;
+    font-size: 24px;
+    text-align: center;
+}
+
+h1 ~ p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 ~ p {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    font-variant: small-caps;
+    background-color: #dbeaee;
+    text-align: center;
+    border-radius: 25px;
+}
+
+h2 ~ p:hover {
+    font-weight: 900;
+    color: #FFF;
+    background: #2874a6d7 ;
+    cursor: pointer;
+}
+
+p {
+    font-family: Lato;
+}
+
+div > div {
+    display: inline;
+}
+
+.stars-group:hover > .star{
+    content: url('images/colored-diamond.png');
+    width: 100px;
+}
+
+.star:hover ~ .star {
+    content: url('images/white-diamond.png');
+    width: 100px;
+}
+
+header {
+    padding-bottom: 10px;
+}
+
+header > div {
+    margin-left: 383px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+#body {
+    margin: 0 auto;
+    width: 55%;
+}
+
+nav {
+    background-color: #464646; 
+}
+
+ul {
+    margin: 0 400px;
+}
+
+li {
+    display: inline-block;
+    padding: 10px 5px;
+}
+
+li:hover {
+    color: #425c63;
+    background: #dbeaee;
+}
+
+a {
+    display: inline-block;
+    font-family: Lato;
+    color: #dbeaee;
+}
+
+header {
+    background-color: #dbeaee;
+}
+
+footer {
+    margin: 0 auto;
+    background-color: #464646;
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+}
