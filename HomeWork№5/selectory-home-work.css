@@ -8,7 +8,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&family=Lato:ital,wght@0,300;0,400;1,400&display=swap');
 
-h1 {
+h1, h2 {
     margin: 30px 0;
     text-transform: uppercase;
     font-family: Bitter;
@@ -17,11 +17,7 @@ h1 {
 }
 
 h2 {
-    margin: 30px 0;
-    text-transform: uppercase;
-    font-family: Bitter;
     font-size: 24px;
-    text-align: center;
 }
 
 h1 ~ p {
@@ -49,8 +45,22 @@ p {
     font-family: Lato;
 }
 
+header {
+    padding-bottom: 10px;
+}
+
+header > div {
+    margin: 0 auto;
+    text-align: center;
+}
+
 div > div {
-    display: inline;
+    display: inline-block;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
 }
 
 .stars-group:hover > .star{
@@ -63,19 +73,6 @@ div > div {
     width: 100px;
 }
 
-header {
-    padding-bottom: 10px;
-}
-
-header > div {
-    margin-left: 383px;
-}
-
-header a {
-    color: white;
-    text-decoration: none;
-}
-
 #body {
     margin: 0 auto;
     width: 55%;
@@ -86,17 +83,23 @@ nav {
 }
 
 ul {
-    margin: 0 400px;
+    text-align: center;
 }
 
-li {
+ul li {
     display: inline-block;
     padding: 10px 5px;
+    text-align: center;
 }
 
 li:hover {
-    color: #425c63;
     background: #dbeaee;
+    color: #425c63;
+}
+
+li:hover a{
+    background: #dbeaee;
+    color: #425c63;
 }
 
 a {
