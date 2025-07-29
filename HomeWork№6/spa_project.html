@@ -97,10 +97,16 @@
       header div:not(:last-of-type) {
       margin-right: 0px;
       } 
+
+      article {
+        margin-left: 50px;
+      }
+
       .description {
         width: 100%;
-        margin: 0;
+        margin: 0 auto;
       }
+
       .time, .price {
         background-color:  #81aea52b;
         padding-bottom: 20px;
@@ -114,6 +120,7 @@
     @media screen and (max-width: 550px) {
       .time, .price {
         display: block;
+        margin-left: 0;
         width: 84%;
       }
     }
