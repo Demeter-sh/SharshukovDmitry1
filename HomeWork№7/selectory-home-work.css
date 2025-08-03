@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100..900&family=Lato:ital,wght@0,300;0,400;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+h1, h2, h3 {
+    margin: 30px 0;
+    text-transform: uppercase;
+    font-family: Bitter;
+    font-size: 32px;
+    text-align: center;
+}
+
+h1 ~ p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h2 ~ p {
+    margin-bottom: 10px;
+    padding: 10px 0;
+    font-variant: small-caps;
+    background-color: #dbeaee;
+    text-align: center;
+    border-radius: 25px;
+}
+
+h2 ~ p:hover {
+    font-weight: 900;
+    color: #FFF;
+    background: #2874a6d7 ;
+    cursor: pointer;
+}
+
+p {
+    font-family: Lato;
+}
+
+header {
+    padding-bottom: 10px;
+    background-color: #dbeaee;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header > div {
+    text-align: center;
+}
+
+header div > div {
+    display: inline-block;
+}
+
+.stars-group:hover > .star{
+    content: url('images/colored-diamond.png');
+    width: 100px;
+}
+
+.star:hover ~ .star {
+    content: url('images/white-diamond.png');
+    width: 100px;
+}
+
+#body {
+    margin: 0 auto;
+    width: 55%;
+}
+
+nav {
+    background-color: #464646; 
+}
+
+ul {
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+li:hover {
+    background: #dbeaee;
+    color: #425c63;
+}
+
+li:hover a{
+    background: #dbeaee;
+    color: #425c63;
+}
+
+a {
+    display: inline-block;
+    font-family: Lato;
+    color: #dbeaee;
+}
+
+footer {
+    margin: 0 auto;
+    background-color: #464646;
+}
+
+footer > p {
+    text-align: center;
+    color: white;
+}
+
+@keyframes bell-rotate-ring {
+    from {
+        transform-origin: top center;
+        transform: rotate(45deg);
+    }
+    to {
+        transform-origin: top center;
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes spiner-rotation {
+    from {
+        transform: rotate(0turn);
+    }    
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.icons {
+    float: left;
+    width: 40px;
+}
+
+.bell-rotation {
+    animation: bell-rotate-ring 3s linear 1s infinite alternate;
+}
+
+.spiner {
+    animation: spiner-rotation 4s linear 1s infinite;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.block img {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+    .block {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 22px;
+    }
+
+    .block:nth-child(odd) > div:first-child {
+        order: 1; 
+        flex-basis: 140px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .block:nth-child(even) > div:first-child {
+        order: 2; 
+        flex-basis: 140px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .block > div:last-child {
+        order: 1;
+        flex-basis: 280px;
+        flex-grow: 2;
+    }
+
+    .block:hover {
+        transform: scale(1.2); 
+        transition: all 1s linear; 
+    }
+
+}
+
+@media screen and (max-width : 1024px) {
+    .block {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-bottom: 22px;
+    }
+
+    .block:nth-child(even) > div:first-child {
+        margin: 0 auto;
+        order: 1; 
+        flex-basis: 140px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .block:nth-child(odd) > div:first-child {
+        margin: 0 auto;
+        order: 1; 
+        flex-basis: 140px;
+        flex-grow: 1; 
+        text-align: center;
+    }
+
+    .block > div:last-child {
+        order: 2;
+        flex-basis: 280px;
+        flex-grow: 2;
+    }
+
+}
