@@ -169,7 +169,7 @@ footer > p {
     .block {
         display: flex;
         flex-direction: row;
-        margin-bottom: 22px;
+        margin-bottom: 28px;
     }
 
     .block:nth-child(odd) > div:first-child {
@@ -204,7 +204,6 @@ footer > p {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        margin-bottom: 22px;
     }
 
     .block:nth-child(even) > div:first-child {
