@@ -26,7 +26,7 @@ h2 {
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 h2 ~ p {
@@ -204,9 +204,11 @@ footer > p {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        margin-bottom: 22px;
+        gap: 20px;
     }
 
-    .block:nth-child(even) > div:first-child {
+    .block > div:first-child {
         margin: 0 auto;
         order: 1; 
         flex-basis: 140px;
@@ -214,18 +216,11 @@ footer > p {
         text-align: center;
     }
 
-    .block:nth-child(odd) > div:first-child {
-        margin: 0 auto;
-        order: 1; 
-        flex-basis: 140px;
-        flex-grow: 1; 
-        text-align: center;
-    }
-
     .block > div:last-child {
         order: 2;
         flex-basis: 280px;
         flex-grow: 2;
+        align-self: center;
     }
 
 }
