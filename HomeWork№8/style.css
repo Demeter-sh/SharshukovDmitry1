@@ -15,14 +15,15 @@ form {
 }
 
 p {
-    margin: 10px 0 0 15px;
+    margin: 10px 0;
     color: #444;
     font-weight: bold;
 }
 
 fieldset {
     color: #ddd;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    padding: 0 20px 20px 20px;
 }
 
 legend {
@@ -33,23 +34,21 @@ legend {
 
 label {
     display: inline-block;
-    margin: 15px 0 0 15px;
+    margin-top: 15px;
     color: #444;
     font-weight: bold;
 }
 
-fieldset:last-of-type > label:last-of-type {
-    margin-top: 0px;
+label:last-of-type {
+    margin-top: 0;
 }
 
-fieldset:first-child > div:first-of-type {
+fieldset:first-child > div:nth-of-type(2) {
     float: left;
-    margin-bottom: 10px;
 }
 
 fieldset:first-child > div:last-child {
     float: right;
-    margin-bottom: 10px;
 } 
 
 fieldset:last-of-type input:last-of-type {
@@ -62,18 +61,11 @@ input {
 }
 
 input[type='text'], input[type='time'], input[type='date'] {
-    margin: 0 15px;
     max-width: 565px;
     width: 100%;
 }
 
-input[type='time'], input[type='date'] {
-    margin-bottom: 20px;
-}
-
-
 input[type='email'], input[type='password'] {
-    margin: 0 15px 10px 20px;
     width: 180px;
 }
 
@@ -113,17 +105,12 @@ input[type='radio'] {
 
 select[name='course'] {
     padding: 0 5px;
-    margin-left: 15px;
     max-width: 565px;
     width: 100%;
 }
 
 .time-wrap {
     display: none;
-}
-
-.time-wrap > input{
-    margin-bottom: 20px;
 }
 
 select:invalid {
@@ -140,35 +127,17 @@ select:valid {
     justify-content: space-between;
 }
 
-.right-radio-button {
-    margin-right: 16px;
+.right-radio-button, .middle-radio-button, .left-radio-button {
+    margin-top: 0;
 }
 
-@media screen and (max-width: 600px) {
-    fieldset {
-        padding-right: 20px;
-    }
-
-    input[type='password'] {
-        margin-right: -15px;
-    }
-
-    .right-radio-button {
-        margin-right: -15px;
-    }
+.right-radio-button label, .middle-radio-button label, .left-radio-button label{
+    font-weight: normal;
 }
 
 @media screen and (max-width: 425px) {
-    fieldset:first-child > div:first-of-type, fieldset:first-child > div:last-child {
+    fieldset:first-child > div:nth-of-type(2), fieldset:first-child > div:last-child {
         float: none;
-    }
-
-    fieldset:first-child > div:first-of-type {
-        margin-bottom: 0;
-    }
-
-    input[type='email'] {
-        margin-bottom: 0;
     }
 
     input[type="email"], input[type="password"] {
@@ -180,12 +149,12 @@ select:valid {
         flex-direction: column;
         align-items: flex-start;
     }
-    
-    .middle-radio-button > label {
-        margin-top: 0;
+
+    label, label:last-of-type, .course_id, .date_id {
+        margin-top: 10px;
     }
 
-    .right-radio-button > label {
+    .right-radio-button label, .middle-radio-button label, .left-radio-button label{
         margin-top: 0;
     }
 }
