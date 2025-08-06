@@ -135,6 +135,14 @@ select:valid {
     font-weight: normal;
 }
 
+label, label:last-of-type, .course_id, .date_id {
+    margin-top: 10px;
+}
+
+.right-radio-button label, .middle-radio-button label, .left-radio-button label{
+    margin-top: 0;
+}
+
 @media screen and (max-width: 425px) {
     fieldset:first-child > div:nth-of-type(2), fieldset:first-child > div:last-child {
         float: none;
@@ -148,13 +156,5 @@ select:valid {
     .radio-flex-box {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    label, label:last-of-type, .course_id, .date_id {
-        margin-top: 10px;
-    }
-
-    .right-radio-button label, .middle-radio-button label, .left-radio-button label{
-        margin-top: 0;
     }
 }
