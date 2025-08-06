@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+    
+    <h2>Регистрация на онлайн курс</h2>
+    <form action=" http://fe.it-academy.by/TestForm.php" method="post">
+        <fieldset>
+            <legend>Личные данные</legend>
+
+            <label for="name-surname_id">ФИО*</label>
+            <input type="text" name="name-surname" id="name-surname_id" required placeholder="Иванов Иван Иванович">
+            <br>            
+
+            <div>
+                <label for="email_id">Email*</label><br>
+                <input type="email" name="email" id="email_id" required placeholder="example@mail.com">
+            </div>
+
+            <div>
+                <label for="password_id">Пароль*</label><br>
+                <input type="password" name="password" id="password_id" required placeholder="Не менее 8 символов" minlength="8">
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Выбор курса</legend>
+
+            <label for="course_id">Курс*</label>
+            <select name="course" id="course_id" required>
+                <option value="" selected disabled>Выберете курс</option>
+                <option value="1">Веб-разработка</option>
+                <option value="2">Data science</option>
+                <option value="3">Графический дизайн</option>
+            </select>
+            <br>            
+
+            <label for="date_id">Дата начала*</label><br>
+            <input type="date" id="date_id" min="2024-01-01" required>
+            
+            <div class="time-wrap">
+                <label for="time_id">Предпочитаемое время занятий (между 13:00 и 20:00)*</label>
+                <input type="time" id="time_id" min="13:00" max="20:00" required>
+            </div>
+            </fieldset>
+
+        <fieldset>
+            <legend>Дополнительно</legend>
+
+            <p>Опыт в IT*</p>
+            <div class="radio-flex-box">
+                <div class="left-radio-button">
+                    <label>Нет опыта
+                        <input type="radio" name="It-experience" value="no">
+                    </label>
+                </div>
+
+                <div class="middle-radio-buttom">
+                    <label> Начинающий
+                        <input type="radio" name="It-experience" value="beginner">
+                    </label>
+                </div>
+
+                <div class=right-radio-button>
+                    <label> Опытный
+                        <input type="radio" name="It-experience" value="experienced">
+                    </label>
+                    <br>
+                </div>  
+            </div>          
+
+            <label> Я согласен на обработку персональных данных
+                <input type="checkbox" name="agreement-check" value="agreement-check" required>
+            </label> 
+        </fieldset>
+        <input type="submit" value="отправить заявку">
+    </form>
+    
+</body>
+</html>
