@@ -15,7 +15,7 @@ form {
 }
 
 p {
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 15px;
     color: #444;
     font-weight: bold;
 }
@@ -63,7 +63,7 @@ input {
 
 input[type='text'], input[type='time'], input[type='date'] {
     margin: 0 15px;
-    max-width: 570px;
+    max-width: 565px;
     width: 100%;
 }
 
@@ -73,7 +73,7 @@ input[type='time'], input[type='date'] {
 
 
 input[type='email'], input[type='password'] {
-    margin: 0 11px 10px 15px;
+    margin: 0 15px 10px 20px;
     width: 180px;
 }
 
@@ -114,7 +114,7 @@ input[type='radio'] {
 select[name='course'] {
     padding: 0 5px;
     margin-left: 15px;
-    max-width: 570px;
+    max-width: 565px;
     width: 100%;
 }
 
@@ -140,6 +140,10 @@ select:valid {
     justify-content: space-between;
 }
 
+.right-radio-button {
+    margin-right: 16px;
+}
+
 @media screen and (max-width: 600px) {
     fieldset {
         padding-right: 20px;
@@ -148,9 +152,13 @@ select:valid {
     input[type='password'] {
         margin-right: -15px;
     }
+
+    .right-radio-button {
+        margin-right: -15px;
+    }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 425px) {
     fieldset:first-child > div:first-of-type, fieldset:first-child > div:last-child {
         float: none;
     }
@@ -164,7 +172,7 @@ select:valid {
     }
 
     input[type="email"], input[type="password"] {
-        max-width: 381px;
+        max-width: 395px;
         width: 100%;
     }
 
