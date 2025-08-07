@@ -43,7 +43,6 @@ label:last-of-type {
     margin-top: 10px;
 }
 
-
 fieldset:first-child > div:nth-of-type(2) {
     float: left;
 }
@@ -130,10 +129,6 @@ select:valid {
 
 .right-radio-button label, .middle-radio-button label, .left-radio-button label{
     font-weight: normal;
-}
-
-label:last-of-type {
-    margin-top: 10px;
 }
 
 .right-radio-button label, .middle-radio-button label, .left-radio-button label{
