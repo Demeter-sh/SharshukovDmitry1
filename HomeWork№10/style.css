@@ -1,0 +1,84 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(300px, 1fr));
+    grid-template-areas:
+        "spain bali bali"
+        "spain egipt czech"
+        "spain turkey italy";
+        gap: 10px;
+}
+
+.grid-container h2 {
+    position: absolute;
+    top: 20%;          
+    left: 50%;         
+    transform: translate(-50%, -50%);   
+    color: rgb(12, 10, 72);
+}
+
+.grid-container > div {
+    position: relative;
+    background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5));
+}
+
+.grid-container > div > img {
+    display: block;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container > div:hover {
+    transform: scale(1.05);
+}
+
+.grid-container > div:hover h2 {
+    display: none;
+}
+
+.grid-container > div:first-child {
+    grid-area: spain;
+}
+.grid-container > div:nth-child(2) {
+    grid-area: bali;
+}
+.grid-container > div:nth-child(3) {
+    grid-area: egipt;
+}
+.grid-container > div:nth-child(4) {
+    grid-area: czech;
+}
+.grid-container > div:nth-child(5) {
+    grid-area: turkey;
+}
+.grid-container > div:first-child(6) {
+    grid-area: italy;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .grid-container {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, minmax(300px, 1fr));
+    grid-template-areas:
+        "bali bali"
+        "spain egipt"
+        "spain czech"
+        "turkey italy";
+}
+}
+
+@media screen and (max-width: 767px) {
+    .grid-container {
+    grid-template-columns: minmax(100px, 400px);
+    grid-template-rows: repeat(6, minmax(300px, 1fr));
+    grid-template-areas:
+        "bali"
+        "spain"
+        "egipt"
+        "czech"
+        "turkey"
+        "italy";
+}
+}
