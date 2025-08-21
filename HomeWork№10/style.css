@@ -1,12 +1,14 @@
 .grid-container {
     display: grid;
+    margin: 0 auto;
+    width: 98%;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: repeat(3, minmax(300px, 1fr));
     grid-template-areas:
         "spain bali bali"
         "spain egipt czech"
         "spain turkey italy";
-        gap: 10px;
+        gap: 22px;
 }
 
 .grid-container h2 {
@@ -71,7 +73,7 @@
 
 @media screen and (max-width: 767px) {
     .grid-container {
-    grid-template-columns: minmax(100px, 400px);
+    grid-template-columns: minmax(100px, 766px);
     grid-template-rows: repeat(6, minmax(300px, 1fr));
     grid-template-areas:
         "bali"
