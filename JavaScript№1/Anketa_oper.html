@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankenta</title>
+</head>
+<body>
+    
+    <script>
+        "use strict"
+
+        const daysInYear = 356;
+        let name = prompt("Ваше имя");
+        let secondName = prompt("Ваше отчество");
+        let surname = prompt("Ваша фамилия");
+        let age = Number(prompt("Ваш возраст в годах"));
+        let gender = confirm("Ваш пол");
+        (gender == true)? gender = "мужской" : gender = "женский";
+        let ageInDays = age * daysInYear;
+        let ageInFiveYears = age + 5;
+        let retirement;
+        (age > 55)? retirement = "да" : retirement = "нет"; 
+
+        alert(`ваше ФИО: ${surname} ${name} ${secondName}
+            ваш  возраст в годах: ${age}
+            ваш возраст в днях: ${ageInDays}
+            через 5 лет вам будет: ${ageInFiveYears}
+            ваш пол: ${gender}
+            вы на пенсии: ${retirement}`
+        );
+    </script>
+</body>
+</html>
