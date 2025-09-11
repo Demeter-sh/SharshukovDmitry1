@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+
+        let books = [
+        {
+            title: "Война и мир",
+            author: "Лев Толстой",
+            isRussianAuthor: true,
+            isModernLiterature: false,
+            genre: 1,
+            year: '1863 - 1869',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 4 },
+                { userId: 3, rating: 4 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Ночной дозор",
+            author: "Сергей Лукьяненко",
+            isRussianAuthor: true,
+            isModernLiterature: true,
+            genre: 3,
+            year: '1998',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Гарри Поттер",
+            author: "Дж. К. Роулинг",
+            isRussianAuthor: false,
+            isModernLiterature: true,
+            genre: 3,
+            year: '1997 - 2007',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 4 },
+                { userId: 4, rating: 4 },
+                { userId: 5, rating: 5 },
+                { userId: 6, rating: 5 },
+                { userId: 7, rating: 5 }
+            ],
+        },
+        {
+            title: "Шерлок Холмс",
+            author: "Артур Конан Дойл",
+            isRussianAuthor: false,
+            isModernLiterature: false,
+            genre: 2,
+            year: '1887',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Девушка в поезде",
+            author: "Пола Хокинс",
+            isRussianAuthor: true,
+            isModernLiterature: true,
+            genre: 2,
+            year: '2015',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 },
+                { userId: 5, rating: 2 }
+            ],
+        },]
+
+        function getBookInfo(book) {
+            let bookInfo = "нет такой книги";
+            for (let key in book) {
+                if (key == "title") {
+                    bookInfo = "Название " + book[key];
+                }
+
+                if (key == "author") {
+                    bookInfo += " автор " + book[key];
+                }
+
+                if (key == "year") {
+                    bookInfo += " год " + book[key];
+                }
+            }
+            return bookInfo;
+        }
+        
+        function addRating(book, userId, rating) {
+            let newUser = {
+                userId : userId,
+                rating : rating,
+            }
+            books.push(book.ratings.push(newUser))
+        }
+
+        function getAverageRating(book) {
+            let averageRating = 0;
+            let average = 0;
+            for (let r of book.ratings) {
+                averageRating +=  r.rating;
+                average ++;
+            }
+            return averageRating / average;
+        }
+
+        function getBookByInterest() {
+            let arrayOfRecomendedBooks =  [];
+            let isModernLiterature = prompt("Предпочитаете современную литературу?");
+            let isRussianAuthor = prompt("Хотели бы книгу русского автора?");
+            let genreQuestion;
+            let isCorrectGenre = true;
+            
+            while (isCorrectGenre) {
+                genreQuestion = prompt("Какой жанр (genre) предпочитаете? 1 - Роман, 2 - Детектив, 3 -  Фентези");
+                if (genreQuestion < '3') {
+                   break;
+                }
+            }    
+            
+            console.log(isModernLiterature);
+            console.log(isRussianAuthor);
+
+            for (let book of books) {
+                if (book.genre == genreQuestion && String(book.isModernLiterature) == isModernLiterature &&  String(book.isRussianAuthor) == isRussianAuthor) {
+                    arrayOfRecomendedBooks.push(book);
+                }
+            }
+            return (arrayOfRecomendedBooks.length > 0) ? console.log(arrayOfRecomendedBooks) : console.log("К сожалению, не смогли подобрать вам книгу");
+
+            
+        }
+
+        console.log(getBookInfo(books[0]));
+
+        addRating(books[0], 10, 0);
+        console.log(books[0].ratings); 
+
+        console.log(getAverageRating(books[0])); 
+       
+        getBookByInterest();
+    </script>
+</body>
+</html>
