@@ -108,6 +108,7 @@
                 userId : userId,
                 rating : rating,
             }
+            
             books.push(book.ratings.push(newUser))
         }
 
@@ -118,6 +119,7 @@
                 averageRating +=  r.rating;
                 average ++;
             }
+
             return averageRating / average;
         }
 
@@ -130,19 +132,18 @@
             
             while (isCorrectGenre) {
                 genreQuestion = prompt("Какой жанр (genre) предпочитаете? 1 - Роман, 2 - Детектив, 3 -  Фентези");
+                
                 if (genreQuestion < '3') {
                    break;
                 }
-            }    
-            
-            console.log(isModernLiterature);
-            console.log(isRussianAuthor);
+            }   
 
             for (let book of books) {
                 if (book.genre == genreQuestion && String(book.isModernLiterature) == isModernLiterature &&  String(book.isRussianAuthor) == isRussianAuthor) {
                     arrayOfRecomendedBooks.push(book);
                 }
             }
+
             return (arrayOfRecomendedBooks.length > 0) ? console.log(arrayOfRecomendedBooks) : console.log("К сожалению, не смогли подобрать вам книгу");
 
             
