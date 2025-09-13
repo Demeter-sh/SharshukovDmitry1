@@ -86,21 +86,7 @@
         },]
 
         function getBookInfo(book) {
-            let bookInfo = "нет такой книги";
-            for (let key in book) {
-                if (key == "title") {
-                    bookInfo = "Название " + book[key];
-                }
-
-                if (key == "author") {
-                    bookInfo += " автор " + book[key];
-                }
-
-                if (key == "year") {
-                    bookInfo += " год " + book[key];
-                }
-            }
-            return bookInfo;
+            return `Название: ${book["title"]}, автор: ${book["author"]}, год ${book["year"]}`;
         }
         
         function addRating(book, userId, rating) {
@@ -125,28 +111,28 @@
 
         function getBookByInterest() {
             let arrayOfRecomendedBooks =  [];
-            let isModernLiterature = prompt("Предпочитаете современную литературу?");
-            let isRussianAuthor = prompt("Хотели бы книгу русского автора?");
+            let isModernLiterature = confirm("Предпочитаете современную литературу?");
+            let isRussianAuthor = confirm("Хотели бы книгу русского автора?");
             let genreQuestion;
             let isCorrectGenre = true;
             
             while (isCorrectGenre) {
                 genreQuestion = prompt("Какой жанр (genre) предпочитаете? 1 - Роман, 2 - Детектив, 3 -  Фентези");
                 
-                if (genreQuestion < '3') {
+                if (genreQuestion >'0' && genreQuestion < '4') {
                    break;
+                } else {
+                    alert("Нет такого жанра");
                 }
             }   
 
             for (let book of books) {
-                if (book.genre == genreQuestion && String(book.isModernLiterature) == isModernLiterature &&  String(book.isRussianAuthor) == isRussianAuthor) {
+                if (book.genre == genreQuestion && book.isModernLiterature == isModernLiterature &&  book.isRussianAuthor == isRussianAuthor) {
                     arrayOfRecomendedBooks.push(book);
                 }
             }
 
             return (arrayOfRecomendedBooks.length > 0) ? console.log(arrayOfRecomendedBooks) : console.log("К сожалению, не смогли подобрать вам книгу");
-
-            
         }
 
         console.log(getBookInfo(books[0]));
