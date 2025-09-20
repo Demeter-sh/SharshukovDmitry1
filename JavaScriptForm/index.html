@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            margin: 21px 15px;
+        }
+        div.book-form {
+            margin: 0 auto; 
+            width: 250px; 
+            border: solid 1px black;
+        }
+
+        div.book-form > div {
+            margin: 15px;
+        }
+
+        p.recomendation{
+            margin: -20px 15px 0px 15px;
+        }
+
+        button {
+            margin: 0px 15px 20px;
+            height: 30px;
+            background-color: green;
+            color: white;
+            border-radius: 3px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="book-form">
+        <h1>Выбор книги</h1>
+        <div>
+            <label for="genreId">Выберете жанр</label>
+            <select name="genre" id="genreId">
+                <option value="1">Роман</option>
+                <option value="2">Детектив</option>
+                <option value="3">Фентези</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="isModernLiterature">Современная литература</label>
+            <input type="checkbox" name="isModernLiterature" id="isModernLiterature">
+        </div>
+        <div>
+            <label>Русский автор
+            <input type="checkbox" name="isRussianAuthor">
+            </label>
+        </div>
+        <button>Получить рекомендацию</button>
+        <p class="recomendation"></p>
+    </div>
+    
+
+    <script>
+        "use strict"
+
+        let books = [
+        {
+            title: "Война и мир",
+            author: "Лев Толстой",
+            isRussianAuthor: true,
+            isModernLiterature: false,
+            genre: 1,
+            year: '1863 - 1869',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 4 },
+                { userId: 3, rating: 4 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Ночной дозор",
+            author: "Сергей Лукьяненко",
+            isRussianAuthor: true,
+            isModernLiterature: true,
+            genre: 3,
+            year: '1998',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Гарри Поттер",
+            author: "Дж. К. Роулинг",
+            isRussianAuthor: false,
+            isModernLiterature: true,
+            genre: 3,
+            year: '1997 - 2007',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 4 },
+                { userId: 4, rating: 4 },
+                { userId: 5, rating: 5 },
+                { userId: 6, rating: 5 },
+                { userId: 7, rating: 5 }
+            ],
+        },
+        {
+            title: "Шерлок Холмс",
+            author: "Артур Конан Дойл",
+            isRussianAuthor: false,
+            isModernLiterature: false,
+            genre: 2,
+            year: '1887',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 }
+            ],
+        },
+        {
+            title: "Девушка в поезде",
+            author: "Пола Хокинс",
+            isRussianAuthor: true,
+            isModernLiterature: true,
+            genre: 2,
+            year: '2015',
+            ratings: [
+                { userId: 1, rating: 4 },
+                { userId: 2, rating: 5 },
+                { userId: 3, rating: 3 },
+                { userId: 4, rating: 5 },
+                { userId: 5, rating: 2 }
+            ],
+        },]
+
+        document.querySelector("div.book-form > button").addEventListener("click", f => {
+            let genre = document.querySelector("#genreId");
+            console.log(genre.value);
+            let isModernLiteratureCheck = document.querySelector("#isModernLiterature");
+            console.log(isModernLiteratureCheck.checked);
+            let isRussianAuthorCheck = document.querySelector("input[name='isRussianAuthor']");
+            console.log(isRussianAuthorCheck.checked);
+            let p = document.querySelector("p.recomendation");
+            console.log(p);
+
+            for (let book of books) {
+                let newP = document.createElement("p");
+                if (book["genre"] == genre.value && book["isModernLiterature"] == isModernLiteratureCheck.checked && book["isRussianAuthor"] == isRussianAuthorCheck.checked) {
+                    newP.textContent = `Предлагаем вам почитать \"${book.title}\"`;
+                    p.innerHTML = " ";
+                    p.append(newP);
+                } else if (book["genre"] != genre.value && book["isModernLiterature"] != isModernLiteratureCheck.checked && book["isRussianAuthor"] != isRussianAuthorCheck.checked) {
+                    p.innerHTML = "Нет подходящей книги";
+                }
+            }
+        });
+    </script>
+</body>
+</html>

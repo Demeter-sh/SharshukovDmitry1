@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordGame</title>
+    <style>
+        h1, h2, h3, p {
+            text-align: center;
+        }
+        div.game {
+            margin: 0 auto;
+            width: 400px;
+            border: solid 2px black;
+        }
+
+        div.game > div:nth-child(2) {
+            margin: 0 auto;
+            height: 30px;
+            width: 240px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        div.grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+        }
+
+        /* div.grid-container > div {
+            margin: 15px 0;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="game">
+        <h1>Игра в слово</h1>
+        <div><input type="text" placeholder="Введите текст"></div>
+        <h2>Новое слово</h2>
+        <h3>Следующее слово на</h3>
+        <div class="grid-container">
+            <div class="payer1">
+                <p>Список слов Игрока 1</p>
+                <ul id="first-player-list"></ul>
+            </div>
+            <div class="payer2">
+                <p>Список слов Игрока 2</p>
+                <ul id="second-player-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let iteration = 1;
+        let lastLetter = "";
+
+        document.querySelector("input[type ='text']").addEventListener("keydown", e => {
+            if (e.code == "Enter") {
+                let newWord = document.querySelector("input[type='text']").value;
+                let firstLetter = document.querySelector("h3");
+                let h2_newWordPresentation = document.querySelector("h2")
+
+                if (newWord[0] == lastLetter || iteration == 1) {
+                    checkPlayer(newWord);
+                    h2_newWordPresentation.innerHTML = "Новое слово - " + newWord;
+                    lastLetter = newWord[newWord.length - 1];
+                    firstLetter.innerHTML = `Следующее слово на ${lastLetter}`;
+                    iteration++;
+                } else {
+                    alert("первая буква не соответствует последней");
+                }
+                console.log(iteration % 2);
+            } 
+        })
+
+        function checkPlayer(newWord) {
+            let firstPlayerList = document.querySelector("#first-player-list");
+            let secondPlayerList = document.querySelector("#second-player-list");
+
+            if (iteration % 2 > 0) {
+                let newLi = document.createElement("li");
+                newLi.textContent = newWord;
+                firstPlayerList.append(newLi);
+            } else if (iteration % 2 == 0) {
+                console.log(`новая буква ${newWord[0]}, старая буква${lastLetter}`)
+                let newLi = document.createElement("li");
+                newLi.textContent = newWord;
+                secondPlayerList.append(newLi);
+            }
+        }
+    </script>
+</body>
+</html>
